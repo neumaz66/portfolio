@@ -52,6 +52,7 @@
             border-radius: 0.5rem;
             padding: 1.5rem;
             transition: border-color 0.2s;
+            overflow: hidden;
         }
 
         .card:hover {
@@ -64,6 +65,34 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
+            position: relative;
+        }
+
+        .hover-text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #9ca3af;
+            position: absolute;
+            transition: opacity 0.3s;
+        }
+
+        .experience-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+
+        .card:hover .hover-text {
+            opacity: 0;
+        }
+
+        .card:hover .experience-content {
+            transform: translateX(0);
+            opacity: 1;
         }
 
         .work-experience span {
@@ -186,8 +215,13 @@
             <h2>Work Experience</h2>
             <div class="card">
                 <div class="work-experience">
-                    <span>None</span>
-                    <div id="emoji">😱</div>
+                    <div class="hover-text">
+                        Hover to see 🤫
+                    </div>
+                    <div class="experience-content">
+                        <span>None</span>
+                        <div id="emoji">😱</div>
+                    </div>
                 </div>
             </div>
         </section>
