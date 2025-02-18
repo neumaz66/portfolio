@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            background: black;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 48rem;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 1.125rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            border: 1px solid #1f2937;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: #4b5563;
+        }
+
+        .work-experience {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .work-experience span {
+            color: #9ca3af;
+        }
+
+        #emoji {
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+
+        .project {
+            text-align: center;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .project-role {
+            color: #6b7280;
+        }
+
+        .project-description {
+            color: #9ca3af;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .icon {
+            color: #9ca3af;
+            transition: color 0.2s;
+        }
+
+        .icon:hover {
+            color: white;
+        }
+
+        ::selection {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Abhinav B</h1>
+            <p class="subtitle">Full Stack Developer</p>
+        </header>
+
+        <section>
+            <h2>Work Experience</h2>
+            <div class="card">
+                <div class="work-experience">
+                    <span>None</span>
+                    <div id="emoji">😱</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="card">
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Blok</span>
+                        <span class="project-role">Creator</span>
+                    </div>
+                    <p class="project-description">A simple text editor made in Python</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <a href="https://github.com/azGKRWPm/" target="_blank" rel="noopener noreferrer" class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a>
+            <a href="mailto:azgk@tutamail.com" class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        function animateEmoji() {
+            const emoji = document.getElementById('emoji');
+            emoji.style.transition = 'transform 0.6s, filter 0.6s';
+            
+            const keyframes = [
+                { transform: 'scale(1)', filter: 'blur(0px)' },
+                { transform: 'scale(1.2) rotate(10deg)', filter: 'blur(2px)' },
+                { transform: 'scale(0.8) rotate(-10deg)', filter: 'blur(0px)' },
+                { transform: 'scale(1.1) rotate(6deg)', filter: 'blur(2px)' },
+                { transform: 'scale(0.9) rotate(-6deg)', filter: 'blur(0px)' },
+                { transform: 'scale(1)', filter: 'blur(0px)' }
+            ];
+
+            let currentFrame = 0;
+
+            function nextFrame() {
+                if (currentFrame < keyframes.length) {
+                    emoji.style.transform = keyframes[currentFrame].transform;
+                    emoji.style.filter = keyframes[currentFrame].filter;
+                    currentFrame++;
+                    setTimeout(nextFrame, 100);
+                } else {
+                    currentFrame = 0;
+                    setTimeout(animateEmoji, 2000);
+                }
+            }
+
+            nextFrame();
+        }
+
+        animateEmoji();
+    </script>
+</body>
+</html>
