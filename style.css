@@ -1,18 +1,21 @@
 body {
     margin: 0;
-    padding: 2rem;
+    padding: 0;
     min-height: 100vh;
     background: black;
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .container {
     max-width: 48rem;
     width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 header {
@@ -32,6 +35,10 @@ h1 {
 
 section {
     margin-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -46,10 +53,90 @@ h2 {
     padding: 1.5rem;
     transition: border-color 0.2s;
     overflow: hidden;
+    background: rgba(17, 24, 39, 0.7);
+    width: 100%;
+    max-width: 38rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card:hover {
     border-color: #4b5563;
+}
+
+.programs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.program {
+    color: #9ca3af;
+    font-size: 1.125rem;
+    padding: 0.2rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.work-experience {
+    text-align: center;
+    position: relative;
+    min-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover-text {
+    color: #9ca3af;
+    opacity: 1;
+    transition: opacity 0.3s;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.experience-content {
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    min-height: 2.5rem;
+    z-index: 1;
+}
+
+.work-experience:hover .hover-text {
+    opacity: 0;
+}
+
+.work-experience:hover .experience-content {
+    opacity: 1;
+}
+
+#emoji {
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.project {
+    text-align: center;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .project-title {
@@ -84,15 +171,37 @@ h2 {
     text-align: center;
 }
 
-@media (max-width: 600px) {
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.icon {
+    color: #9ca3af;
+    transition: color 0.2s;
+}
+
+.icon:hover {
+    color: white;
+}
+
+::selection {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
     .container {
-        padding: 0.5rem;
+        padding: 1rem;
+        min-height: unset;
+    }
+    h1 {
+        font-size: 2.5rem;
     }
     .card {
         padding: 1rem;
-    }
-    h1 {
-        font-size: 2rem;
+        max-width: 98vw;
     }
     h2 {
         font-size: 1.1rem;
