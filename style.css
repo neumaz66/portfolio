@@ -91,16 +91,20 @@ h2 {
 }
 
 .hover-text {
-    color: #9ca3af;
+    color: #d1d5db;
     opacity: 1;
     transition: opacity 0.3s;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
 }
 
 .experience-content {
@@ -108,7 +112,7 @@ h2 {
     transition: opacity 0.3s;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     justify-content: center;
     min-height: 2.5rem;
     z-index: 1;
